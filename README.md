@@ -6,7 +6,7 @@
 ---
 
 ## Video
-- 🔗 [Multimodal Anomaly Detection](https://arxiv.org/abs/2103.00020](https://youtu.be/OTdbhyA1p4o)  
+- 🔗 [Multimodal Anomaly Detection](https://youtu.be/OTdbhyA1p4o)  
 
 ---
 
