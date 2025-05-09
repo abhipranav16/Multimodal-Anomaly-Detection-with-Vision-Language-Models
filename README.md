@@ -1,6 +1,6 @@
 # 📌 Multimodal Anomaly Detection with Vision-Language Models
 
-**Author:** Abhiprabav Eppalapalli  
+**Author:** Abhipranav Eppalapalli  
 **Course:** DA623 – Winter 2025
 
 ---
