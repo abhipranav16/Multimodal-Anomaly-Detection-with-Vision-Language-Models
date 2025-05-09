@@ -35,35 +35,6 @@ Goal:
 This method is unsupervised, flexible, and generalizes across domains.
 
 ---
-
-## 🧪 Code Demo
-
-```python
-from transformers import CLIPProcessor, CLIPModel
-from PIL import Image
-import torch
-
-# Load model and processor
-model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
-processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
-
-# Load image and define candidate text descriptions
-image = Image.open("sample_image.jpg")
-texts = ["a clean metal nut", "a damaged metal nut", "a broken piece"]
-
-# Encode inputs
-inputs = processor(text=texts, images=image, return_tensors="pt", padding=True)
-outputs = model(**inputs)
-
-# Calculate similarity
-logits_per_image = outputs.logits_per_image
-probs = logits_per_image.softmax(dim=1)
-
-# Print results
-for text, prob in zip(texts, probs[0]):
-    print(f"{text}: {prob.item():.3f}")
-
-
 ## 🧩 Key Learnings
 
 - **Semantic Similarity as a Proxy for Anomaly:** Vision-language models allow us to detect mismatches in meaning, which often correlates with errors or anomalies.
@@ -95,5 +66,34 @@ for text, prob in zip(texts, probs[0]):
 - 🧠 [BAIR Blog on Visual Haystacks](https://bair.berkeley.edu/blog/2024/07/20/visual-haystacks/)
 
 ---
+## 🧪 Code Demo
+
+```python
+from transformers import CLIPProcessor, CLIPModel
+from PIL import Image
+import torch
+
+# Load model and processor
+model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
+processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
+
+# Load image and define candidate text descriptions
+image = Image.open("sample_image.jpg")
+texts = ["a clean metal nut", "a damaged metal nut", "a broken piece"]
+
+# Encode inputs
+inputs = processor(text=texts, images=image, return_tensors="pt", padding=True)
+outputs = model(**inputs)
+
+# Calculate similarity
+logits_per_image = outputs.logits_per_image
+probs = logits_per_image.softmax(dim=1)
+
+# Print results
+for text, prob in zip(texts, probs[0]):
+    print(f"{text}: {prob.item():.3f}")
+
+
+
 
 > _This project was created as part of the DA623 Winter 2025 course at [IIT GUWAHATI]._
