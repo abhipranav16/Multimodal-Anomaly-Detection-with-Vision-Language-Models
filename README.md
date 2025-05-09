@@ -62,3 +62,38 @@ probs = logits_per_image.softmax(dim=1)
 # Print results
 for text, prob in zip(texts, probs[0]):
     print(f"{text}: {prob.item():.3f}")
+
+
+## 🧩 Key Learnings
+
+- **Semantic Similarity as a Proxy for Anomaly:** Vision-language models allow us to detect mismatches in meaning, which often correlates with errors or anomalies.
+- **Zero-shot Capabilities:** CLIP generalizes surprisingly well, even without fine-tuning.
+- **Prompt Sensitivity:** The model is highly sensitive to the quality and phrasing of text inputs.
+- **Multimodal > Unimodal:** Combining image and text improves robustness and interpretability.
+
+---
+
+## 🤔 Reflections
+
+**What Surprised Me:**
+- CLIP’s ability to identify subtle inconsistencies that even traditional models would miss.
+- How little data is needed to start experimenting with powerful models thanks to HuggingFace and pretrained weights.
+
+**Scope for Improvement:**
+- Improve the **realism of text descriptions** by mining from actual log data.
+- Add a **temporal dimension** (e.g., sensor trends over time).
+- Use interpretability tools like **Grad-CAM** to understand what parts of the image influence similarity.
+
+---
+
+## 📚 References
+
+- 🔗 [CLIP Paper (OpenAI)](https://arxiv.org/abs/2103.00020)  
+- 🔗 [BLIP Paper](https://arxiv.org/abs/2201.12086)  
+- 📂 [MVTec Anomaly Detection Dataset](https://www.mvtec.com/company/research/datasets/mvtec-ad)  
+- 💻 [CLIP GitHub Repo](https://github.com/openai/CLIP)  
+- 🧠 [BAIR Blog on Visual Haystacks](https://bair.berkeley.edu/blog/2024/07/20/visual-haystacks/)
+
+---
+
+> _This project was created as part of the DA623 Winter 2025 course at [IIT GUWAHATI]._
