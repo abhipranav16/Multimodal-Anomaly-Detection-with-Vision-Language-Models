@@ -5,6 +5,11 @@
 
 ---
 
+## Video
+- 🔗 [Multimodal Anomaly Detection]([https://arxiv.org/abs/2103.00020](https://youtu.be/OTdbhyA1p4o))  
+
+---
+
 ## 💡 Motivation
 
 Anomaly detection is essential in fields like manufacturing, healthcare, and cybersecurity. However, traditional systems usually rely on a single modality—such as image-based inspection or log analysis—which can miss critical signals when data is noisy or incomplete.
